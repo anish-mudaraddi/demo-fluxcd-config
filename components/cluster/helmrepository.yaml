@@ -2,8 +2,8 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: capi-helm-charts
-  namespace: capi-self
+  name: stfc-cloud-charts
+  namespace: clusters
 spec:
-  url: https://azimuth-cloud.github.io/capi-helm-charts
+  url: 
   interval: 1h

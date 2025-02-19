@@ -1,6 +1,11 @@
 resources:
   - namespace.yaml
-  - configmap.yaml
   - helmrepository.yaml
   - helmchart.yaml
   - helmrelease.yaml
+configMapGenerator:
+  - name: cert-manager-base-values
+    files:
+      - values.yaml
+configurations:
+  - kustomizeconfig.yaml

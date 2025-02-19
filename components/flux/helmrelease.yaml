@@ -9,10 +9,6 @@ spec:
     kind: HelmChart
     name: flux2
   releaseName: flux
-  valuesFrom:
-    - kind: ConfigMap
-      name: flux-config
-      valuesKey: values.yaml
   install:
     createNamespace: true
     remediation:
@@ -23,3 +19,9 @@ spec:
   driftDetection:
     mode: enabled
   interval: 5m
+  valuesFrom:
+    - kind: ConfigMap
+      name: flux-base-config
+    - kind: ConfigMap
+      name: flux-cluster-config
+      optional: true

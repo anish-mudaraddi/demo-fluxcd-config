@@ -5,9 +5,9 @@ metadata:
   name: openstack-cluster
   namespace: capi-self
 spec:
-  chart: openstack-cluster
-  version: 0.11.2
+  chart: stfc-cloud-openstack-cluster
+  version: 1.4.0
   sourceRef:
     kind: HelmRepository
-    name: capi-helm-charts
+    name: stfc-cloud-charts
   interval: 1h

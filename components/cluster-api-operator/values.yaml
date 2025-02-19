@@ -1,0 +1,12 @@
+core: capi-system:cluster-api:v1.8.4
+bootstrap: capi-kubeadm-bootstrap-system:kubeadm:v1.8.4
+controlPlane: capi-kubeadm-control-plane-system:kubeadm:v1.8.4
+infrastructure: capo-system:openstack:v0.10.5
+manager:
+  featureGates:
+    core:
+      MachinePool: false
+      ClusterResourceSet: false
+      ClusterTopology: false
+      RuntimeSDK: false
+      MachineSetPreflightChecks: true

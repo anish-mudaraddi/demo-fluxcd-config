@@ -12,10 +12,6 @@ spec:
     kind: HelmChart
     name: cluster-api-operator
   releaseName: cluster-api-operator
-  valuesFrom:
-    - kind: ConfigMap
-      name: cluster-api-operator-config
-      valuesKey: values.yaml
   install:
     createNamespace: true
     remediation:
@@ -31,3 +27,6 @@ spec:
         target:
           kind: CustomResourceDefinition
   interval: 5m
+  valuesFrom:
+  - kind: ConfigMap
+    name: cluster-api-operator-base-config

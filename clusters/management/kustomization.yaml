@@ -1,0 +1,13 @@
+resources:
+  # apps
+  - ../../components/flux
+  - ../../components/cluster-api
+
+  # infra
+  # self-manage
+  - ./infra/
+  # child-clusters
+  - ../worker/infra
+
+
+# patch in apps here

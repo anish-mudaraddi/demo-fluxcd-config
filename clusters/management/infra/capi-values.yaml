@@ -1,0 +1,18 @@
+openstack-cluster:
+  kubernetesVersion: "1.31.4"
+  machineImage: "capi-ubuntu-2204-kube-v1.31.4-2025-01-24"
+
+  nodeGroups:
+      name: default-md-0
+      machineCount: 2
+      machineFlavor: l2.tiny
+
+  addons:
+    ingress:
+      enabled: true
+      nginx:
+        release:
+          values:
+            controller:
+              service:
+                loadBalancerIP: "130.246.211.121"
