@@ -3,11 +3,7 @@ resources:
   - ../../components/flux
   - ../../components/cluster-api
 
-  # infra
-  # self-manage
-  - ./infra/
-  # child-clusters
-  - ../worker/infra
-
+  # flux infra controllers
+  - ./controllers
 
 # patch in apps here

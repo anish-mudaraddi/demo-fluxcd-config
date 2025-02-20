@@ -19,9 +19,9 @@ spec:
   driftDetection:
     mode: enabled
   interval: 5m
-valuesFrom:
-- kind: ConfigMap
-  name: cert-manager-base-values
-- kind: ConfigMap
-  name: cert-manager-overlay-values
-  optional: true
+  valuesFrom:
+  - kind: ConfigMap
+    name: cert-manager-base-values
+  - kind: ConfigMap
+    name: cert-manager-overlay-values
+    optional: true

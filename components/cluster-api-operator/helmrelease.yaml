@@ -29,4 +29,4 @@ spec:
   interval: 5m
   valuesFrom:
   - kind: ConfigMap
-    name: cluster-api-operator-base-config
+    name: cluster-api-operator-base-values

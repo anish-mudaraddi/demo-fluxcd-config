@@ -1,12 +1,17 @@
+namespace: capi-operator-system
 resources:
   - namespace.yaml
-  - configmap.yaml
   - helmrepository.yaml
   - helmchart.yaml
   - helmrelease.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
 configMapGenerator:
-  - name: cluster-api-operator-base-config
+  - name: cluster-api-operator-base-values
     files:
-      - values.yaml
+      - values.yaml=values.yaml
+
 configurations:
   - kustomizeconfig.yaml

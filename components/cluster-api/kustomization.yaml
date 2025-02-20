@@ -1,4 +1,7 @@
 resources:
+  - namespace.yaml
+  - helmrepository.yaml
+  - helmchart.yaml
   - ../cert-manager
   - ../cluster-api-operator
   - ../cluster-api-addon-provider

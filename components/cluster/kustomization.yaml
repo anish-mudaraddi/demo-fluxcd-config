@@ -1,11 +1,14 @@
+namespace: clusters
 resources:
-  - namespace.yaml
-  - helmrepository.yaml
-  - helmchart.yaml
   - helmrelease.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
 configMapGenerator:
-  - name: cert-manager-base-values
+  - name: capi-cluster-base-values
     files:
-      - values.yaml
+      - values.yaml=values.yaml
+
 configurations:
   - kustomizeconfig.yaml

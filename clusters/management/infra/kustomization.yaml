@@ -1,8 +1,25 @@
 namePrefix: management-
+namespace: clusters
 
 resources:
-  - ../../components/cluster
-  - ./capi-cluster
+  - ../../../components/cluster
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+configMapGenerator:
+  - name: cluster-values
+    files:
+      - values.yaml=capi-values.yaml
+
+secretGenerator:
+  - name: cluster-api-server-fip
+    files:
+      - values.yaml=./secrets/api-server-fip.yaml.encrypted
+  - name: cluster-app-creds
+    files:
+      - values.yaml=./secrets/app-creds.yaml.encrypted
+
 
 # We still need to patch the HelmRelease's releaseName and valuesFrom
 patches:
@@ -22,22 +39,12 @@ patches:
         path: /spec/valuesFrom/-
         value:
           kind: Secret
-          name: cluster-api-server-fip
+          name: management-cluster-api-server-fip
       - op: add
         path: /spec/valuesFrom/-
         value:
           kind: Secret
-          name: cluster-app-creds
-
-configMapGenerator:
-  - name: cluster-values
-    files:
-      - values.yaml=capi-values.yaml
-
-secretGenerator:
-  - name: cluster-api-server-fip
-    files:
-      - values.yaml=./secrets/api-sever-fip.enc.yaml
-  - name: cluster-app-creds
-    files:
-      - values.yaml=./secrets/app-creds.enc.yaml
+          name: management-cluster-app-creds
+        
+configurations:
+  - kustomizeconfig.yaml  

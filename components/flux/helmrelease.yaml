@@ -21,7 +21,4 @@ spec:
   interval: 5m
   valuesFrom:
     - kind: ConfigMap
-      name: flux-base-config
-    - kind: ConfigMap
-      name: flux-cluster-config
-      optional: true
+      name: flux-base-values

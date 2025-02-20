@@ -4,7 +4,7 @@ kind: HelmRelease
 metadata:
   # this will be patched to match cluster name
   name: cluster 
-  namespace: cluters
+  namespace: clusters
 spec:
   dependsOn:
     - name: cluster-api-operator
@@ -30,6 +30,6 @@ spec:
     mode: enabled
   # Reconcile every 5 minutes
   interval: 5m
-valuesFrom:
-- kind: ConfigMap
-  name: capi-cluster-base-config
+  valuesFrom:
+  - kind: ConfigMap
+    name: capi-cluster-base-values

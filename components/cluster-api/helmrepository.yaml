@@ -2,8 +2,8 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: stfc-cloud-charts
+  name: cloud-helm-charts
   namespace: clusters
 spec:
-  url: 
+  url: https://stfc.github.io/cloud-helm-charts/
   interval: 1h
