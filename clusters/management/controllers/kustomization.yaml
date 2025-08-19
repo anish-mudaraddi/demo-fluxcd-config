@@ -1,3 +1,0 @@
-resources:
-  - ./management-controller.yaml
-  - ./worker-controller.yaml

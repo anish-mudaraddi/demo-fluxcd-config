@@ -15,10 +15,10 @@ configMapGenerator:
 secretGenerator:
   - name: cluster-api-server-fip
     files:
-      - values.yaml=./secrets/api-server-fip.yaml.encrypted
+      - values.yaml=./secrets/api-server-fip.encrypted.yaml
   - name: cluster-app-creds
     files:
-      - values.yaml=./secrets/app-creds.yaml.encrypted
+      - values.yaml=./secrets/app-creds.encrypted.yaml
 
 
 # We still need to patch the HelmRelease's releaseName and valuesFrom

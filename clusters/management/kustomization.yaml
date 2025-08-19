@@ -4,6 +4,7 @@ resources:
   - ../../components/cluster-api
 
   # flux infra controllers
-  - ./controllers
+  - ./controllers/management-infra.yaml
+  - ./controllers/worker-infra.yaml
 
 # patch in apps here
